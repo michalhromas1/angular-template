@@ -70,8 +70,8 @@ feature.component.scss
 #### Router
 
 - Routing module
-- Guards
-- Resolvers
+- Router guards
+- Router resolvers
 
 #### Utils
 
@@ -79,6 +79,7 @@ feature.component.scss
 - Pipes
 - Decorators
 - Helper functions
+- Non-router guards
 
 ### What do root folders mean
 

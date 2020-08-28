@@ -1,4 +1,5 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Optional, SkipSelf } from '@angular/core';
+import { throwIfAlreadyLoaded } from './utils/module-import.guard';
 
 @NgModule({
   declarations: [],
@@ -6,4 +7,8 @@ import { NgModule } from '@angular/core';
   providers: [],
   bootstrap: [],
 })
-export class CoreModule {}
+export class CoreModule {
+  constructor(@Optional() @SkipSelf() parentModule: CoreModule) {
+    throwIfAlreadyLoaded(parentModule, 'CoreModule');
+  }
+}
