@@ -94,7 +94,7 @@ The SharedModule allows us to organize and streamline our code. The shared modul
 
 #### Api
 
-All information related to api, should be a middleware between actual backend api and the frontend app
+All information related to api, should be a middleware between actual backend api and the frontend app. Should contain only api services and related helpers, no components, routing or modules. All services should be providedIn: 'root'.
 
 #### Features
 
