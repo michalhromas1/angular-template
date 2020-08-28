@@ -1,5 +1,7 @@
 # AngularStarterkit
 
+Inspired by [this](https://itnext.io/choosing-a-highly-scalable-folder-structure-in-angular-d987de65ec7), [this](https://itnext.io/choosing-the-right-file-structure-for-angular-in-2020-and-beyond-a53a71f7eb05) and [this](https://angularbites.com/building-an-enterprise-grade-angular-project-structure/) article about Angular folder structure.
+
 ## Folder structure
 
 ### Recommended subfolder structure
