@@ -1,9 +1,9 @@
-// import { NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 
-// @NgModule({
-//   declarations: [],
-//   imports: [],
-//   providers: [],
-//   bootstrap: [],
-// })
-// export class CoreModule {}
+@NgModule({
+  declarations: [],
+  imports: [],
+  providers: [],
+  bootstrap: [],
+})
+export class CoreModule {}
