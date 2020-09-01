@@ -3,30 +3,52 @@
 
 module.exports = function (config) {
   config.set({
-    basePath: '',
-    frameworks: ['jasmine', '@angular-devkit/build-angular'],
+    frameworks: ["jasmine", "@angular-devkit/build-angular"],
+    browsers: [
+      "ChromeHeadless",
+      // "Chrome"
+    ],
+    reporters: [
+      "brief",
+      // "kjhtml",
+      // "coverage-istanbul",
+    ],
     plugins: [
-      require('karma-jasmine'),
-      require('karma-chrome-launcher'),
-      require('karma-jasmine-html-reporter'),
-      require('karma-coverage-istanbul-reporter'),
-      require('@angular-devkit/build-angular/plugins/karma')
+      require("karma-jasmine"),
+      require("karma-chrome-launcher"),
+      require("@angular-devkit/build-angular/plugins/karma"),
+      require("karma-brief-reporter"),
+      // require("karma-jasmine-html-reporter"),
+      // require("karma-coverage-istanbul-reporter"),
     ],
     client: {
-      clearContext: false // leave Jasmine Spec Runner output visible in browser
+      clearContext: false, // leave Jasmine Spec Runner output visible in browser
     },
-    coverageIstanbulReporter: {
-      dir: require('path').join(__dirname, './coverage/angular-starterkit'),
-      reports: ['html', 'lcovonly', 'text-summary'],
-      fixWebpackSourcePaths: true
-    },
-    reporters: ['progress', 'kjhtml'],
+    basePath: "",
     port: 9876,
     colors: true,
-    logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['Chrome'],
     singleRun: false,
-    restartOnFileChange: true
+    restartOnFileChange: true,
+    logLevel: config.LOG_INFO,
+    briefReporter: {
+      // https://www.npmjs.com/package/karma-brief-reporter
+      suppressErrorReport: false,
+      earlyErrorReport: true,
+      suppressErrorHighlighting: true,
+      omitExternalStackFrames: true,
+      suppressBrowserLogs: true,
+      renderOnRunCompleteOnly: true,
+    },
+    jasmineHtmlReporter: {
+      // https://www.npmjs.com/package/karma-jasmine-html-reporter
+    },
+    coverageIstanbulReporter: {
+      // https://www.npmjs.com/package/karma-coverage-istanbul-reporter
+      // https://angular.io/guide/testing-code-coverage
+      // dir: require("path").join(__dirname, "./coverage/angular-starterkit"),
+      // reports: ["html", "lcovonly", "text-summary"],
+      // fixWebpackSourcePaths: true,
+    },
   });
 };
