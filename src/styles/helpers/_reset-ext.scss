@@ -1,0 +1,54 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  font-weight: 400;
+}
+
+@-moz-document url-prefix() {
+  body {
+    font-weight: lighter !important;
+  }
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+}
+
+a,
+button,
+input[type="submit"] {
+  cursor: pointer;
+  padding: 0;
+  border: none;
+  background: inherit;
+  outline: none;
+}
+
+button {
+  display: block;
+}
+
+form {
+  input,
+  textarea {
+    display: block;
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    outline: none;
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  textarea {
+    resize: none;
+  }
+}
