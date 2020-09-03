@@ -1,14 +1,16 @@
-// --- Base Colors ---
-$c-black: #000000;
-$c-black: #333333;
-$c-white: #ffffff;
-$c-orange: #e66337;
+:root {
+  // --- Base Colors ---
+  --c-black: #000000;
+  --c-black_2: #333333;
+  --c-white: #ffffff;
+  --c-orange: #e66337;
 
-// --- Semantic Colors ---
-$c-primary: $c-white;
-$c-secondary: $c-black;
-$c-accent: $c-orange;
-$c-text: $c-black;
+  // --- Semantic Colors ---
+  --c-primary: var(--c-white);
+  --c-secondary: var(--c-black);
+  --c-accent: var(--c-orange);
+  --c-text: var(--c-black_2);
 
-$c-body: $c-text;
-$c-body-bg: $c-primary;
+  --c-body: var(--c-text);
+  --c-body-bg: var(--c-primary);
+}

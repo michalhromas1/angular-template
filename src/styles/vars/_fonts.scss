@@ -1,14 +1,14 @@
-// --- Fonts ---
-// Arial
-$arial: Arial, Helvetica, sans-serif;
-
-// --- Semantic Fonts ---
-$f-body: $arial;
-
-// --- Font Sizes ---
 :root {
-  font-size: 62.5%; // 1rem = 10px
-}
+  // 1rem = 10px
+  font-size: 62.5%;
 
-$fs-body: 2.4rem;
-$lh-body: 3.1rem;
+  // --- Font Families ---
+  --arial: Arial, Helvetica, sans-serif;
+
+  // --- Semantic Font Families ---
+  --f-body: var(--arial);
+
+  // --- Font Sizes ---
+  --fs-body: 1.6rem;
+  --lh-body: 2.1rem;
+}

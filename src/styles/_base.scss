@@ -1,7 +1,7 @@
 body {
-  font-family: $f-body;
-  font-size: $fs-body;
-  line-height: $lh-body;
-  background: $c-body-bg;
-  color: $c-body;
+  font-family: var(--f-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  background: var(--c-body-bg);
+  color: var(--c-body);
 }
