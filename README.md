@@ -11,6 +11,7 @@ Inspired by [this](https://itnext.io/choosing-a-highly-scalable-folder-structure
 - config
 - constants
 - interceptors
+- mocks
 - models
 - services
 - utils
@@ -95,7 +96,7 @@ The SharedModule allows us to organize and streamline our code. The shared modul
 
 #### Api
 
-All information related to api, should be a middleware between actual backend api and the frontend app. Should contain only api services and related helpers, no components, routing or modules. All services should be providedIn: 'root'.
+All information related to api, should be a middleware between actual backend api and the frontend app. Should contain only api services, related helpers and api mocks, no components, routing or modules. All services should be providedIn: 'root'.
 
 #### Features
 
@@ -108,10 +109,6 @@ In a similar way to how we want to avoid bloating up the AppModule as the applic
 #### ../Assets
 
 All app's assets.
-
-#### ../Mocks
-
-Mocked data simulating the api.
 
 ---
 
