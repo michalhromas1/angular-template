@@ -1,32 +1,36 @@
-import { TestBed, async } from '@angular/core/testing';
+import { DebugElement } from '@angular/core';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
 import { RouterTestingModule } from '@angular/router/testing';
-
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './core/components/header/header.component';
+import { CoreModule } from './core/core.module';
 
 describe('AppComponent', () => {
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      imports: [RouterTestingModule],
+  let fixture: ComponentFixture<AppComponent>;
+  let debugElement: DebugElement;
+  let component: AppComponent;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [RouterTestingModule, CoreModule],
       declarations: [AppComponent],
     }).compileComponents();
-  }));
-
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
   });
 
-  // it(`should have as title 'angular-starterkit'`, () => {
-  //   const fixture = TestBed.createComponent(AppComponent);
-  //   const app = fixture.componentInstance;
-  //   expect(app.title).toEqual('angular-starterkit');
-  // });
+  beforeEach(() => {
+    fixture = TestBed.createComponent(AppComponent);
+    component = fixture.componentInstance;
+    debugElement = fixture.debugElement;
+    fixture.detectChanges();
+  });
 
-  // it('should render title', () => {
-  //   const fixture = TestBed.createComponent(AppComponent);
-  //   fixture.detectChanges();
-  //   const compiled = fixture.nativeElement;
-  //   expect(compiled.querySelector('.content span').textContent).toContain('angular-starterkit app is running!');
-  // });
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+
+  it('should have page header', () => {
+    const header = debugElement.query(By.directive(HeaderComponent));
+    expect(header).toBeTruthy();
+  });
 });
