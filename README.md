@@ -4,7 +4,7 @@ Inspired by [this](https://itnext.io/choosing-a-highly-scalable-folder-structure
 
 ## Folder structure
 
-### Recommended subfolder structure
+### Recommended structure
 
 #### api
 
@@ -19,6 +19,9 @@ Inspired by [this](https://itnext.io/choosing-a-highly-scalable-folder-structure
 #### core
 
 core.module.ts
+core.component.ts
+core.component.html
+core.component.scss
 
 - components (static components like header & footer)
 - config
@@ -26,6 +29,7 @@ core.module.ts
 - models
 - router
 - services
+- tests
 - utils
 
 #### shared
@@ -60,7 +64,7 @@ feature.component.scss
 - images
 - documents
 
-### What belongs to subfolders
+### What belongs to folders
 
 #### Models
 
@@ -82,11 +86,11 @@ feature.component.scss
 - Helper functions
 - Non-router guards
 
-### What do root folders mean
+### What do folders mean
 
 #### Core module
 
-The CoreModule takes on the role of the app root module, but is not the module that gets bootstrapped by Angular at run-time. The common denominator between the files present here is that we only need to load them once, and that is at run-time, which makes them singleton. The module contains root-scoped services, static components like the navbar and footer, interceptors, guard, constants, enums, utils, and universal models. To prevent re-importing the module elsewhere, we should add a module-import-guard in it's constructor method.
+The CoreModule takes on the role of the app root module. The common denominator between the files present here is that we only need to load them once, and that is at run-time, which makes them singleton. The module contains root-scoped services, static components like the navbar and footer, interceptors, guard, constants, enums, utils, and universal models.
 
 #### Shared module
 
@@ -100,13 +104,13 @@ All information related to api, should be a middleware between actual backend ap
 
 #### Features
 
-All logically distinct app modules, should be lazy loaded, can have children
+All logically distinct modules, should be lazy loaded, can have children.
 
-#### ../Styles
+#### ../styles
 
-In a similar way to how we want to avoid bloating up the AppModule as the application grows, it's also true for the styles.scss file.You should instead create a styles folder, which contains mixins or css-functions, responsible for their own areas. These files are then imported in the appropriate order inside the styles.scss file, providing their global styles to the rest of the app. Create mixins for reusable css-snippets, and scope the associated logic together.
+In a similar way to how we want to avoid bloating up the CoreModule as the application grows, it's also true for the styles.scss file.You should instead create a styles folder, which contains mixins or css-functions, responsible for their own areas. These files are then imported in the appropriate order inside the styles.scss file, providing their global styles to the rest of the app. Create mixins for reusable css-snippets, and scope the associated logic together.
 
-#### ../Assets
+#### ../assets
 
 All app's assets.
 
