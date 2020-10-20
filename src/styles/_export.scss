@@ -1,17 +1,14 @@
-// --- Resets ---
-@import './vendor/reset';
-@import './helpers/reset-ext';
-
 // --- Vendor ---
+@import './vendor/reset';
+@import './vendor/reset-ext';
 @import './vendor/sr-only';
 
 // --- Helpers ---
-@import './helpers/helpers';
+@import './helpers/breakpoints';
 
 // --- Vars ---
 @import './vars/fonts';
 @import './vars/colors';
-@import './vars/animations';
 
 // --- Base ---
 @import './base';
