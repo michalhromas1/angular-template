@@ -4,7 +4,6 @@ import { By } from '@angular/platform-browser';
 import { RouterTestingModule } from '@angular/router/testing';
 import { HeaderComponent } from '../components/header/header.component';
 import { CoreComponent } from '../core.component';
-import { CoreModule } from '../core.module';
 
 describe('CoreComponent', () => {
   let fixture: ComponentFixture<CoreComponent>;
@@ -13,8 +12,8 @@ describe('CoreComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RouterTestingModule, CoreModule],
-      declarations: [CoreComponent],
+      imports: [RouterTestingModule],
+      declarations: [CoreComponent, HeaderComponent],
     }).compileComponents();
   });
 
