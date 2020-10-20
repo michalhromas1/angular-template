@@ -2,24 +2,24 @@ import { DebugElement } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { RouterTestingModule } from '@angular/router/testing';
-import { AppComponent } from './app.component';
-import { HeaderComponent } from './core/components/header/header.component';
-import { CoreModule } from './core/core.module';
+import { HeaderComponent } from '../components/header/header.component';
+import { CoreComponent } from '../core.component';
+import { CoreModule } from '../core.module';
 
-describe('AppComponent', () => {
-  let fixture: ComponentFixture<AppComponent>;
+describe('CoreComponent', () => {
+  let fixture: ComponentFixture<CoreComponent>;
   let debugElement: DebugElement;
-  let component: AppComponent;
+  let component: CoreComponent;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [RouterTestingModule, CoreModule],
-      declarations: [AppComponent],
+      declarations: [CoreComponent],
     }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AppComponent);
+    fixture = TestBed.createComponent(CoreComponent);
     component = fixture.componentInstance;
     debugElement = fixture.debugElement;
     fixture.detectChanges();
